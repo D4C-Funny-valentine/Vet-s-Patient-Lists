@@ -7,7 +7,7 @@ import UserImg from "@/images/user_image.png";
 const Navbar = () => {
   return (
     <nav className="flex justify-between items-center px-16 h-28 text-white bg-primary">
-      <Image alt="img" src={Logo} width={50} />
+      <Image alt="img" src={Logo} width={50} priority />
       <div className="flex items-center">
         <Image alt="img" src={Notification} width={25} className="mr-10" />
         <div className="profile flex items-center gap-4">
