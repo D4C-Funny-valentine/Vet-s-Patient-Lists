@@ -1,0 +1,56 @@
+{
+  "patients": [
+    {
+      "id": 1,
+      "name": "John",
+      "status": "allergy",
+      "pawRent": "The Nan Su",
+      "breed": "Spaniel",
+      "gender": "Male",
+      "birthDate": "1.5.2021",
+      "contact": "099111111",
+      "address": "123 Main St",
+      "township": "New York",
+      "city": "NY Roadway Suite 330"
+    },
+    {
+      "id": 2,
+      "name": "Alice",
+      "status": "allergy",
+      "pawRent": "Fluffy Paws",
+      "breed": "Labrador",
+      "gender": "Female",
+      "birthDate": "3.10.2019",
+      "contact": "088222222",
+      "address": "456 Oak St CA Apartment 102",
+      "township": "Los Angeles",
+      "city": "California"
+    },
+    {
+      "id": 3,
+      "name": "Charlie",
+      "status": "allergy",
+      "pawRent": "Pawsome Haven",
+      "breed": "Golden Retriever",
+      "gender": "Male",
+      "birthDate": "7.20.2020",
+      "contact": "077333333",
+      "address": "789 Pine St, Chicago, IL Suite 201",
+      "township": "Chicago",
+      "city": "Illinois"
+    },
+    {
+      "id": 4,
+      "name": "Emily",
+      "status": "allergy",
+      "pawRent": "Cotton Tails",
+      "breed": "Dachshund",
+      "gender": "Female",
+      "birthDate": "5.15.2018",
+      "contact": "066444444",
+      "address": "101 Cedar St, San Francisco, CA Unit 45",
+      "township": "San Francisco",
+      "city": "California"
+    }
+  ]
+}
