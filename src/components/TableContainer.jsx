@@ -24,15 +24,14 @@ const TableContainer = () => {
     setSearchTerm(searchTerm);
   };
 
-  const filteredPatients = patientsData
-    .filter(
-      (patient) =>
-        patient.name.toLowerCase().includes(searchTerm.toLowerCase()) |
-        patient.breed.toLowerCase().includes(searchTerm.toLowerCase()) |
-        patient.pawRent.toLowerCase().includes(searchTerm.toLowerCase()) |
-        patient.status.toLowerCase().includes(searchTerm.toLowerCase())
-    )
-    .slice(0, rowsPerPage);
+  const filteredPatients = patientsData.filter(
+    (patient) =>
+      patient.name.toLowerCase().includes(searchTerm.toLowerCase()) |
+      patient.breed.toLowerCase().includes(searchTerm.toLowerCase()) |
+      patient.pawRent.toLowerCase().includes(searchTerm.toLowerCase()) |
+      patient.status.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+  // .slice(0, rowsPerPage);
 
   return (
     <div className="">
@@ -49,7 +48,7 @@ const TableContainer = () => {
               </h1>
             </div>
           ) : (
-            <Table patientsData={filteredPatients} />
+            <Table patientsData={filteredPatients} rowsPerPage={rowsPerPage} />
           )}
           <ModalCustom />
           <ConfirmModal />

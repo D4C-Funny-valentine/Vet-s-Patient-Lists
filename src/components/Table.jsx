@@ -1,15 +1,15 @@
-import { tableHeader } from "@/helper/data";
 import React, { useState } from "react";
 import TableDataRow from "./TableDataRow";
+import { tableHeader } from "@/helper/data";
 
-const Table = ({ patientsData }) => {
-  const pageSize = 5;
+const Table = ({ patientsData, rowsPerPage }) => {
+  console.log(patientsData.length);
   const [currentPage, setCurrentPage] = useState(1);
 
-  const totalPages = Math.ceil(patientsData.length / pageSize);
+  const totalPages = Math.ceil(patientsData.length / rowsPerPage);
 
-  const startIndex = (currentPage - 1) * pageSize;
-  const endIndex = startIndex + pageSize;
+  const startIndex = (currentPage - 1) * rowsPerPage;
+  const endIndex = startIndex + rowsPerPage;
 
   const visiblePatients = patientsData.slice(startIndex, endIndex);
 
@@ -20,6 +20,7 @@ const Table = ({ patientsData }) => {
   const handleNextPage = () => {
     setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
   };
+
   return (
     <>
       <table className="w-full select-none mt-10">
@@ -40,7 +41,7 @@ const Table = ({ patientsData }) => {
         </thead>
 
         <tbody className="">
-          {visiblePatients?.map((item) => (
+          {visiblePatients.map((item) => (
             <TableDataRow key={item.id} item={item} />
           ))}
         </tbody>

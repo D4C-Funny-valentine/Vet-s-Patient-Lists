@@ -13,6 +13,10 @@ const Header = ({ searchHandler, setRowsPerPage }) => {
     setRowsPerPage(value);
   };
 
+  const searchPatientHandler = (e) => {
+    searchHandler(e.target.value);
+  };
+
   return (
     <div className="header px-16 flex justify-between items-end w-full">
       <div className="flex flex-col gap-3">
@@ -22,9 +26,7 @@ const Header = ({ searchHandler, setRowsPerPage }) => {
         <div className="px-3 py-1 rounded-xl w-80 border border-gray-300 text-light_gray/50 flex items-center gap-3">
           <input
             type="text"
-            onChange={(e) => {
-              searchHandler(e.target.value);
-            }}
+            onChange={searchPatientHandler}
             className="outline-none flex-1 placeholder:text-dust text-black"
             placeholder="Search table"
           />
@@ -33,12 +35,12 @@ const Header = ({ searchHandler, setRowsPerPage }) => {
         <div className="flex items-center gap-8">
           <DropdownOption
             options={["Allergy", "Sick"]}
-            onChange={(e) => searchHandler(e.target.value)}
+            onChange={searchPatientHandler}
           />
           <DropdownOption
             options={["Golden Retriever", "Beagle", "Spaniel"]}
             type="breed"
-            onChange={(e) => searchHandler(e.target.value)}
+            onChange={searchPatientHandler}
           />
         </div>
       </div>
