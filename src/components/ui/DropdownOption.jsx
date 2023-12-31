@@ -5,8 +5,6 @@ import black_down from "@/images/black_down.png";
 const DropdownOption = ({ options, type = "status", onChange }) => {
   const handleSelectChange = (event) => {
     const selectedValue = event.target.value;
-
-    // Ignore the default value (placeholder) in the onChange callback
     if (selectedValue !== "") {
       onChange(event);
     }
