@@ -3,7 +3,6 @@ import TableDataRow from "./TableDataRow";
 import { tableHeader } from "@/helper/data";
 
 const Table = ({ patientsData, rowsPerPage }) => {
-  console.log(patientsData.length);
   const [currentPage, setCurrentPage] = useState(1);
 
   const totalPages = Math.ceil(patientsData.length / rowsPerPage);
