@@ -11,12 +11,26 @@ import { setOpenConfirmModal } from "@/services/slice/confirmModal";
 
 const TableDataRow = ({ item }) => {
   const [openEditor, setOpenEditor] = useState(false);
+  const [selected, setSelected] = useState(false);
   const dispatch = useDispatch();
+  const [selectedId, setSelectedId] = useState([]);
 
   return (
-    <tr className="text-start border border-gray-300 shadow-sm hover:bg-primary/20">
+    <tr
+      className={`text-start border border-gray-300 shadow-sm hover:bg-primary/20 ${
+        selected ? "bg-primary/20" : "bg-transparent"
+      } `}
+    >
       <td className="p-5">
-        <input type="checkbox" className="accent-primary" />
+        <input
+          type="checkbox"
+          className="accent-primary"
+          value={selected}
+          onChange={(e) => {
+            setSelected(e.target.checked);
+            setSelectedId((prev) => [...prev, item.id]);
+          }}
+        />
       </td>
       <td className="p-5">{item.id}</td>
       <td className="p-5">{item.name}</td>
