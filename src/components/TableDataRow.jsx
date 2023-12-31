@@ -13,7 +13,6 @@ const TableDataRow = ({ item }) => {
   const [openEditor, setOpenEditor] = useState(false);
   const [selected, setSelected] = useState(false);
   const dispatch = useDispatch();
-  const [selectedId, setSelectedId] = useState([]);
 
   return (
     <tr
@@ -26,10 +25,7 @@ const TableDataRow = ({ item }) => {
           type="checkbox"
           className="accent-primary"
           value={selected}
-          onChange={(e) => {
-            setSelected(e.target.checked);
-            setSelectedId((prev) => [...prev, item.id]);
-          }}
+          onChange={(e) => setSelected(e.target.checked)}
         />
       </td>
       <td className="p-5">{item.id}</td>
