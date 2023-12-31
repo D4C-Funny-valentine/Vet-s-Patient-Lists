@@ -20,7 +20,6 @@ const DropdownOption = ({ options, type = "status", onChange }) => {
         <option value="" hidden>
           {type === "status" ? "Status" : "Breed"}
         </option>{" "}
-        // make this is can't select chat gpt
         {options?.map((item) => (
           <option key={item} className={"bg-transparent"}>
             {item}
